@@ -3,7 +3,7 @@ import css from './Form.module.css'
 
 export class Form extends Component {
   render() {
-    const { onChange, onSubmit, nameValue} = this.props;
+    const { onChange, onSubmit, nameValue, telValue} = this.props;
 
     return (
       <form onSubmit={onSubmit} className={css.form}>
@@ -15,6 +15,18 @@ export class Form extends Component {
             name="name"
             value={nameValue}
             onChange={onChange}
+            required
+          />
+        </label>
+        <label className={css.label}>
+          <span>Tel number</span>
+          <input
+            className={css.input}
+            type="tel"
+            name="number"
+            value={telValue}
+            onChange={onChange}
+            pattern="\d{1,9}"
             required
           />
         </label>
